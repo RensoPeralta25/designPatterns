@@ -1,10 +1,10 @@
 package com.codewithmosh.ObjetoIterable;
 
 import com.codewithmosh.interfaz.Collection;
-import pojo.Producto;
+import com.codewithmosh.pojo.Producto;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import com.codewithmosh.interfaz.Iterator;
 import java.util.List;
 
 public class CarritoCompra implements Collection {
@@ -17,7 +17,7 @@ public class CarritoCompra implements Collection {
 
     @Override
     public Iterator createIterator() {
-        return null;
+        return new CarritoCompraIterator(this);
     }
 
     public List<Producto> getProductos() {

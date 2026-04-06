@@ -1,14 +1,14 @@
 package com.codewithmosh.ObjetoIterable;
 
-import pojo.Producto;
+import com.codewithmosh.pojo.Producto;
 
-import java.util.Iterator;
+import com.codewithmosh.interfaz.Iterator;
 
-public class ProductoIterator implements Iterator {
+public class CarritoCompraIterator implements Iterator {
     private CarritoCompra carritoCompra;
     private int index;
 
-    public ProductoIterator (CarritoCompra carritoCompra, int index){
+    public CarritoCompraIterator (CarritoCompra carritoCompra){
         this.carritoCompra = carritoCompra;
         this.index = 0;
     }

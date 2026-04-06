@@ -1,4 +1,4 @@
-package pojo;
+package com.codewithmosh.pojo;
 
 public class Producto {
     private Long id;

@@ -1,6 +1,6 @@
 package com.codewithmosh.interfaz;
 
-import java.util.Iterator;
+import com.codewithmosh.interfaz.Iterator;
 
 public interface Collection {
     Iterator createIterator();
