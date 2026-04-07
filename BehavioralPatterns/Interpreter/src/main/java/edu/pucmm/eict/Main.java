@@ -1,17 +1,20 @@
 package edu.pucmm.eict;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+        Contexto contexto = new Contexto();
+        contexto.setVariable("EsAdmin", false);
+        contexto.setVariable("EsGerente", true);
+        contexto.setVariable("TieneAprobacion", true);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+        Expresion esAdmin = new Variable("EsAdmin");
+        Expresion esGerente = new Variable("EsGerente");
+        Expresion tieneAprobacion = new Variable("TieneAprobacion");
+
+        Expresion adminOgerente = new ExpresionOR(esAdmin, esGerente);
+        Expresion reglaFinal = new ExpresionAND(adminOgerente, tieneAprobacion);
+
+        boolean resultado = reglaFinal.interpretar(contexto);
+        System.out.println("Puede acceder al sistema? " + resultado);
     }
 }
